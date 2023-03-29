@@ -1,0 +1,92 @@
+//Leer tres números que denoten una fecha (día, mes, año) y comprobar que sea una fecha
+//válida. Si la fecha no es válida escribir un mensaje de error por pantalla. Si la fecha es
+//	válida se debe imprimir la fecha cambiando el número que representa el mes por su
+//nombre. Por ejemplo: si se introduce 1 2 2006, se deberá imprimir "1 de febrero de 2006".
+Algoritmo muestra_fecha
+	definir dia, amo como entero
+	Definir mes Como Caracter
+	Escribir "ingrese dia"
+	leer dia 
+	Escribir "ingrese numero de mes"
+	Leer  mes 
+	Escribir "ingrese año"
+	leer amo
+		segun mes Hacer
+			"1":
+				si dia >= 1 y dia <= 31 Entonces
+					escribir dia ," de enero de ", amo
+				SiNo
+					escribir "dia mal ingresado"
+				FinSi
+				
+			"2":
+				si dia >= 1 y dia <= 29 Entonces
+					escribir dia ," de febrero de ", amo
+				SiNo
+					escribir "dia mal ingresado"
+				fin si
+			"3":
+				si dia >= 1 y dia <= 30 Entonces	
+					escribir dia, " de marzo de", amo
+				SiNo
+					escribir "dia mal ingresado"
+				FinSi
+			"4":
+				si dia >= 1 y dia <= 30 Entonces
+					escribir dia, " de abril de ", amo
+				SiNo
+					escribir "dia mal ingresado"
+				FinSi
+			"5":
+				si dia >= 1 y dia <= 31 Entonces
+					Escribir dia, " de mayo de ", amo
+				SiNo
+					escribir "dia mal ingresado"
+				FinSi
+			"6":
+				si dia >= 1 y dia <= 30 Entonces
+					Escribir dia, " de junio de ", amo
+				SiNo
+					escribir "dia mal ingresado"
+				FinSi
+			"7":
+				si dia >= 1 y dia <= 31 Entonces
+					escribir dia, " de julio de ", amo
+				SiNo
+					escribir "dia mal ingresado"
+				FinSi
+			"8":
+				si dia >= 1 y dia <= 31 Entonces
+					escribir dia, " de agosto de ", amo
+				SiNo
+					escribir "dia mal ingresado"
+				FinSi
+			"9":
+				si dia >= 1 y dia <= 30 Entonces
+					escribir dia, " de septiembre de ", amo
+				SiNo
+					escribir "dia mal ingresado"
+				FinSi
+			"10":
+				si dia >= 1 y dia <= 31 Entonces
+					escribir dia, " de octubre de ", amo
+				SiNo
+					escribir "dia mal ingresado"
+				FinSi
+			"11":
+				si dia >= 1 y dia <= 30 Entonces
+					escribir dia, " de noviembre de ", amo
+				SiNo
+					escribir "dia mal ingresado"
+				FinSi
+			"12":
+				si dia >= 1 y dia <= 31 Entonces
+					escribir dia, " de diciembre de ", amo 
+				SiNo
+				escribir "dia mal ingresado"
+			FinSi
+		de otro modo
+			escribir "Mes mal ingresado"
+		FinSegun
+
+FinAlgoritmo
