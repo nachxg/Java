@@ -1,0 +1,104 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Guia10Ej6 {
+    private static Map<String, Double> productos = new HashMap<>();
+    private static Scanner scanner = new Scanner(System.in);
+    
+    public static void main(String[] args) {
+        int opcion;
+        
+        do {
+            mostrarMenu();
+            opcion = obtenerOpcion();
+            ejecutarOpcion(opcion);
+        } while (opcion != 5);
+    }
+    
+    private static void mostrarMenu() {
+        System.out.println("---- MENÚ ----");
+        System.out.println("1. Agregar producto");
+        System.out.println("2. Modificar precio de un producto");
+        System.out.println("3. Eliminar producto");
+        System.out.println("4. Mostrar lista de productos");
+        System.out.println("5. Salir");
+        System.out.println();
+    }
+    
+    private static int obtenerOpcion() {
+        System.out.print("Ingrese una opción: ");
+        return scanner.nextInt();
+    }
+    
+    private static void ejecutarOpcion(int opcion) {
+        switch (opcion) {
+            case 1:
+                agregarProducto();
+                break;
+            case 2:
+                modificarPrecio();
+                break;
+            case 3:
+                eliminarProducto();
+                break;
+            case 4:
+                mostrarProductos();
+                break;
+            case 5:
+                System.out.println("¡Hasta luego!");
+                break;
+            default:
+                System.out.println("Opción inválida");
+                break;
+        }
+        System.out.println();
+    }
+    
+    private static void agregarProducto() {
+        System.out.print("Ingrese el nombre del producto: ");
+        String nombre = scanner.next();
+        System.out.print("Ingrese el precio del producto: ");
+        double precio = scanner.nextDouble();
+        
+        productos.put(nombre, precio);
+        System.out.println("Producto agregado correctamente");
+    }
+    
+    private static void modificarPrecio() {
+        System.out.print("Ingrese el nombre del producto a modificar: ");
+        String nombre = scanner.next();
+        
+        if (productos.containsKey(nombre)) {
+            System.out.print("Ingrese el nuevo precio: ");
+            double precio = scanner.nextDouble();
+            
+            productos.put(nombre, precio);
+            System.out.println("Precio modificado correctamente");
+        } else {
+            System.out.println("El producto no existe");
+        }
+    }
+    
+    private static void eliminarProducto() {
+        System.out.print("Ingrese el nombre del producto a eliminar: ");
+        String nombre = scanner.next();
+        
+        if (productos.containsKey(nombre)) {
+            productos.remove(nombre);
+            System.out.println("Producto eliminado correctamente");
+        } else {
+            System.out.println("El producto no existe");
+        }
+    }
+    
+    private static void mostrarProductos() {
+        System.out.println("---- Lista de Productos ----");
+        for (Map.Entry<String, Double> entry : productos.entrySet()) {
+            String nombre = entry.getKey();
+            double precio = entry.getValue();
+            
+            System.out.println("Producto: " + nombre + ", Precio: " + precio);
+        }
+    }
+}
