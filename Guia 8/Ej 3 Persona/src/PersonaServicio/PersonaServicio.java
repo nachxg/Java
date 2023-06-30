@@ -37,8 +37,20 @@ public class PersonaServicio {
     Scanner leer = new Scanner(System.in).useDelimiter("\n");
     Persona p1 = new Persona();
     
-    public boolean esMayorDeEdad(Persona p1) {
-        return p1.getEdad() >= 18;
+    public boolean esMayorDeEdad(Persona p1) throws Exception{
+        
+        try {
+        
+            return p1.getEdad() >= 18;
+        
+        }
+        catch (Exception e){
+            
+            System.out.println("La edad de la persona debe encontrarse entre 1 y 99");
+            return false;
+            
+        }
+        
     }
     
     public Persona crearPersona() {

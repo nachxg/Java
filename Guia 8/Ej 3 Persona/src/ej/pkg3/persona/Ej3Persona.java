@@ -30,59 +30,69 @@
 //cuantos son mayores de edad y cuantos menores. Para esto, podemos crear unos 
 //métodos adicionales.
 
+//Inicializar un objeto de la clase Persona ejercicio 3 de la guía 8 Servicios, a null y tratar
+//de invocar el método esMayorDeEdad() a través de ese objeto. Luego, englobe el código
+//con una cláusula try-catch para probar la nueva excepción que debe ser controlada.
+
 package ej.pkg3.persona;
 import Entidades.Persona;
 import PersonaServicio.PersonaServicio;
 public class Ej3Persona {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         
         double flaco = 0,ideal = 0,obeso = 0,mayores = 0,menores = 0;
         Persona[] personas = new Persona[4];
         int[] imc = new int[4];
         boolean[] mayorDeEdad = new boolean[4];
         
+        
+        
         PersonaServicio ps = new PersonaServicio();
+        Persona p1 = null;
         
-        for (int i = 0; i < 4; i++) {
-            personas[i] = ps.crearPersona(); 
-        }
+        System.out.println(ps.esMayorDeEdad(p1));
         
-        for (int i = 0; i < 4; i++) {
-            imc[i] = ps.calcularIMC(personas[i]);
-            
-            switch (imc[i]) {
-                case -1:
-                    flaco++;
-                    break;
-                case 0:
-                    ideal++;
-                    break;
-                default:
-                    obeso++;
-                    break;
-            }
-                    
-            
-            
-            mayorDeEdad[i] = ps.esMayorDeEdad(personas[i]);
-            
-            if (mayorDeEdad[i]) {
-                mayores++;
-            } else { 
-                menores++; 
-            }
-        }
-        
-        for (int i = 0; i < 4; i++) {
-            System.out.println(imc[i]);
-        }
-        
-        System.out.println(flaco);
-        System.out.println(ideal);
-        System.out.println(obeso);
-        
-        
+//        
+//        for (int i = 0; i < 4; i++) {
+//            personas[i] = ps.crearPersona(); 
+//        }
+//        
+//        for (int i = 0; i < 4; i++) {
+//            imc[i] = ps.calcularIMC(personas[i]);
+//            
+//            switch (imc[i]) {
+//                case -1:
+//                    flaco++;
+//                    break;
+//                case 0:
+//                    ideal++;
+//                    break;
+//                default:
+//                    obeso++;
+//                    break;
+//            }
+//                    
+//            
+//            
+//            mayorDeEdad[i] = ps.esMayorDeEdad(personas[i]);
+//            
+//            if (mayorDeEdad[i]) {
+//                mayores++;
+//            } else { 
+//                menores++; 
+//            }
+//        }
+//        
+//        for (int i = 0; i < 4; i++) {
+//            System.out.println(imc[i]);
+//        }
+//        
+//        System.out.println(flaco);
+//        System.out.println(ideal);
+//        System.out.println(obeso);
+//        
+//        
         System.out.println("Promedio de personas por debajo del peso ideal: " + (flaco / 4) * 100 + " %." );
         System.out.println("Promedio de personas en su peso ideal: " + (ideal / 4) *100 + " %." );
         System.out.println("Promedio de personas sobre su peso ideal: " + (obeso / 4) *100 + " %." );

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Extra 2">
+  <ClassDiagramComponents>
+    <Class name="&lt;&lt;abstract&gt;&gt; Edificio" package="" visibility="public" xPosition="287.0" yPosition="28.0">
+      <Fields>
+        <Field name="alto" type="double" visibility="private"/>
+        <Field name="ancho" type="double" visibility="private"/>
+        <Field name="largo" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="calcularSuperficie" returnType="void" visibility="public"/>
+        <Method name="calcularVolumen" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Polideportivo" package="" visibility="public" xPosition="500.0" yPosition="256.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="instalacion" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Oficinas" package="" visibility="public" xPosition="88.0" yPosition="256.0">
+      <Fields>
+        <Field name="nroOficinas" type="int" visibility="private"/>
+        <Field name="personasPorOficina" type="int" visibility="private"/>
+        <Field name="nroPisos" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Polideportivo" target="&lt;&lt;abstract&gt;&gt; Edificio"/>
+    <IsRelation name="is" source="Oficinas" target="&lt;&lt;abstract&gt;&gt; Edificio"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

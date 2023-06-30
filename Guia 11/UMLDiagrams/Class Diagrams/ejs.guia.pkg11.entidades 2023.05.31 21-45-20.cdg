@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ejs.guia.pkg11.entidades">
+  <ClassDiagramComponents>
+    <Class name="Auto" package="ejs.guia.pkg11.entidades" visibility="public" xPosition="66.0" yPosition="303.0">
+      <Fields>
+        <Field name="propietario" type="Persona" visibility="private"/>
+        <Field name="marca" type="String" visibility="private"/>
+        <Field name="modelo" type="String" visibility="private"/>
+        <Field name="color" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Persona" name="propietario"/>
+          <Argument type="String" name="marca"/>
+          <Argument type="String" name="modelo"/>
+          <Argument type="String" name="color"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="DNI" package="ejs.guia.pkg11.entidades" visibility="public" xPosition="95.0" yPosition="12.0">
+      <Fields>
+        <Field name="serie" type="char" visibility="private"/>
+        <Field name="numero" type="long" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="char" name="serie"/>
+          <Argument type="long" name="numero"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getSerie" returnType="char" visibility="public"/>
+        <Method name="setSerie" returnType="void" visibility="public">
+          <Argument type="char" name="serie"/>
+        </Method>
+        <Method name="getNumero" returnType="long" visibility="public"/>
+        <Method name="setNumero" returnType="void" visibility="public">
+          <Argument type="long" name="numero"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Persona" package="ejs.guia.pkg11.entidades" visibility="public" xPosition="332.0" yPosition="14.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="dni" type="DNI" visibility="private"/>
+        <Field name="autos" type="List&lt;Auto&gt;" visibility="private"/>
+        <Field name="amigos" type="List&lt;Persona&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="List&lt;Persona&gt;" name="amigos"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="DNI" name="dni"/>
+          <Argument type="List&lt;Auto&gt;" name="autos"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getAmigos" returnType="List&lt;Persona&gt;" visibility="public"/>
+        <Method name="setAmigos" returnType="void" visibility="public">
+          <Argument type="List&lt;Persona&gt;" name="amigos"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="getDni" returnType="DNI" visibility="public"/>
+        <Method name="setDni" returnType="void" visibility="public">
+          <Argument type="DNI" name="dni"/>
+        </Method>
+        <Method name="getAutos" returnType="List&lt;Auto&gt;" visibility="public"/>
+        <Method name="setAutos" returnType="void" visibility="public">
+          <Argument type="List&lt;Auto&gt;" name="autos"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="propietario" source="ejs.guia.pkg11.entidades.Auto" target="ejs.guia.pkg11.entidades.Persona" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="amigos" source="ejs.guia.pkg11.entidades.Persona" target="ejs.guia.pkg11.entidades.Persona" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Persona&gt;"/>
+    <UseRelation source="ejs.guia.pkg11.entidades.Persona" target="ejs.guia.pkg11.entidades.Auto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ejs.guia.pkg11.entidades.Persona" target="ejs.guia.pkg11.entidades.DNI" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="dni" source="ejs.guia.pkg11.entidades.Persona" target="ejs.guia.pkg11.entidades.DNI" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="autos" source="ejs.guia.pkg11.entidades.Persona" target="ejs.guia.pkg11.entidades.Auto" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Auto&gt;"/>
+    <UseRelation source="ejs.guia.pkg11.entidades.Persona" target="ejs.guia.pkg11.entidades.Persona" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

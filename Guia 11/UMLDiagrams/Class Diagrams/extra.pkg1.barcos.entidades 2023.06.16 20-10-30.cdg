@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="extra.pkg1.barcos.entidades">
+  <ClassDiagramComponents>
+    <Class name="Alquiler" package="extra.pkg1.barcos.entidades" visibility="public" xPosition="30.0" yPosition="23.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="dni" type="long" visibility="private"/>
+        <Field name="fechaAlquiler" type="LocalDate" visibility="private"/>
+        <Field name="fechaDevolucion" type="LocalDate" visibility="private"/>
+        <Field name="posicionAmarre" type="int" visibility="private"/>
+        <Field name="barco" type="Barco" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="long" name="dni"/>
+          <Argument type="LocalDate" name="fechaAlquiler"/>
+          <Argument type="LocalDate" name="fechaDevolucion"/>
+          <Argument type="int" name="posicionAmarre"/>
+          <Argument type="Barco" name="barco"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getDni" returnType="long" visibility="public"/>
+        <Method name="setDni" returnType="void" visibility="public">
+          <Argument type="long" name="dni"/>
+        </Method>
+        <Method name="getFechaAlquiler" returnType="LocalDate" visibility="public"/>
+        <Method name="setFechaAlquiler" returnType="void" visibility="public">
+          <Argument type="LocalDate" name="fechaAlquiler"/>
+        </Method>
+        <Method name="getFechaDevolucion" returnType="LocalDate" visibility="public"/>
+        <Method name="setFechaDevolucion" returnType="void" visibility="public">
+          <Argument type="LocalDate" name="fechaDevolucion"/>
+        </Method>
+        <Method name="getPosicionAmarre" returnType="int" visibility="public"/>
+        <Method name="setPosicionAmarre" returnType="void" visibility="public">
+          <Argument type="int" name="posicionAmarre"/>
+        </Method>
+        <Method name="getBarco" returnType="Barco" visibility="public"/>
+        <Method name="setBarco" returnType="void" visibility="public">
+          <Argument type="Barco" name="barco"/>
+        </Method>
+        <Method name="calcularPrecioAlquiler" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Barco" package="extra.pkg1.barcos.entidades" visibility="public" xPosition="444.0" yPosition="64.0">
+      <Fields>
+        <Field name="matricula" type="int" visibility="protected"/>
+        <Field name="eslora" type="long" visibility="protected"/>
+        <Field name="anioFabricacion" type="int" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="matricula"/>
+          <Argument type="long" name="eslora"/>
+          <Argument type="int" name="anioFabricacion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calcularModulo" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="BarcoAMotor" package="extra.pkg1.barcos.entidades" visibility="public" xPosition="166.0" yPosition="342.0">
+      <Fields>
+        <Field name="potencia" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="potencia"/>
+          <Argument type="int" name="matricula"/>
+          <Argument type="long" name="eslora"/>
+          <Argument type="int" name="anioFabricacion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calcularModulo" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Velero" package="extra.pkg1.barcos.entidades" visibility="public" xPosition="625.0" yPosition="342.0">
+      <Fields>
+        <Field name="nroMastiles" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="nroMastiles"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="nroMastiles"/>
+          <Argument type="int" name="matricula"/>
+          <Argument type="long" name="eslora"/>
+          <Argument type="int" name="anioFabricacion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calcularModulo" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="YateDeLujo" package="extra.pkg1.barcos.entidades" visibility="public" xPosition="797.0" yPosition="58.0">
+      <Fields>
+        <Field name="nroCamarotes" type="int" visibility="private"/>
+        <Field name="potencia" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="nroCamarotes"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="nroCamarotes"/>
+          <Argument type="int" name="potencia"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="nroCamarotes"/>
+          <Argument type="int" name="potencia"/>
+          <Argument type="int" name="matricula"/>
+          <Argument type="long" name="eslora"/>
+          <Argument type="int" name="anioFabricacion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calcularModulo" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="extra.pkg1.barcos.entidades.BarcoAMotor" target="extra.pkg1.barcos.entidades.Barco"/>
+    <IsRelation name="is" source="extra.pkg1.barcos.entidades.Velero" target="extra.pkg1.barcos.entidades.Barco"/>
+    <IsRelation name="is" source="extra.pkg1.barcos.entidades.YateDeLujo" target="extra.pkg1.barcos.entidades.Barco"/>
+    <HasRelation name="barco" source="extra.pkg1.barcos.entidades.Alquiler" target="extra.pkg1.barcos.entidades.Barco" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="extra.pkg1.barcos.entidades.Alquiler" target="extra.pkg1.barcos.entidades.Barco" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="extra.pkg1.barcos.entidades">
+  <ClassDiagramComponents>
+    <Class name="Alquiler" package="extra.pkg1.barcos.entidades" visibility="public" xPosition="49.0" yPosition="92.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Barco" package="extra.pkg1.barcos.entidades" visibility="public" xPosition="251.0" yPosition="92.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="BarcoAMotor" package="extra.pkg1.barcos.entidades" visibility="public" xPosition="433.0" yPosition="92.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Velero" package="extra.pkg1.barcos.entidades" visibility="public" xPosition="619.0" yPosition="92.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="YateDeLujo" package="extra.pkg1.barcos.entidades" visibility="public" xPosition="813.0" yPosition="92.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>
